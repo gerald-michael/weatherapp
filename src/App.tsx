@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { CssBaseline } from '@mui/material';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Random from './components/Random/Random';
+import Search from './components/search/Search';
+import Header from './components/shared/header/Header';
+import WeatherContextProvider from './store/context/weather';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CssBaseline />
+      <Router>
+        <Header />
+
+        <WeatherContextProvider>
+          <Routes>
+            <Route path="search/" element={<Search />} />
+            <Route index element={<Random />} />
+          </Routes>
+        </WeatherContextProvider>
+      </Router>
     </div>
   );
 }

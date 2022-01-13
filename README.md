@@ -1,7 +1,6 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+# Weather APP
+create a .env file in the project root folder
+add a REACT_APP_WEATHER_API_KEY entry with your api key
 ## Available Scripts
 
 In the project directory, you can run:
